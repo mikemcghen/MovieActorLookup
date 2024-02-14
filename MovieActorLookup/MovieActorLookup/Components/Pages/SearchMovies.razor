@@ -1,0 +1,87 @@
+﻿@page "/searchmovies"
+@using MovieActorLookup.Models
+@rendermode InteractiveServer
+@inject MovieService MovieService
+
+<h3>Search Movies and Characters</h3>
+
+<div class="mb-3">
+    <input type="text" class="form-control" @bind="movieTitle" placeholder="Enter movie title..." />
+    <input type="text" class="form-control" @bind="characterName" placeholder="Enter character name..." />
+    <button class="btn btn-primary mt-2" @onclick="SearchForActorAndCharacters">Search</button>
+</div>
+
+@if (actor != null)
+{
+    <h4>Actor: @actor.Name</h4>
+        <div class="cards-container" style="display: flex; flex-wrap: wrap;">
+        @foreach (var movieCharacter in actor.MovieCharacters)
+        {
+            <div class="card mb-4 shadow-sm movie-card" style="width: 18rem; margin: 10px;">
+                <img class="card-img-top" src="@($"https://image.tmdb.org/t/p/w500{movieCharacter.MoviePosterPath}")" alt="Movie Poster">
+                <div class="card-body">
+                    <h5 class="movie-card-text">@movieCharacter.CharacterName</h5>
+                    <p class="movie-card-body">
+                        <span>@movieCharacter.MovieTitle</span>
+                        <span class="text-muted"> - @movieCharacter.Overview</span>
+                    </p>
+                    <p class="text-muted" style="text-align:center;">Release Date: <span>@movieCharacter.ReleaseDate</span></p>
+                </div>
+            </div>
+        }
+        </div>
+}
+else
+{
+    <p>Enter a movie title and character name to begin your search.</p>
+}
+
+@code {
+    private string movieTitle;
+    private string characterName;
+    private Actor actor;
+
+    private async Task SearchForActorAndCharacters()
+    {
+        if (!string.IsNullOrWhiteSpace(movieTitle) && !string.IsNullOrWhiteSpace(characterName))
+        {
+            actor = null;
+            var movies = await MovieService.GetMoviesByTitle(movieTitle);
+
+            foreach (var movie in movies)
+            {
+                var credits = await MovieService.GetMovieCreditsByMovieId(movie.Id);
+                var foundCastMember = credits.Cast.FirstOrDefault(c => c.Character.ToLower().Contains(characterName.ToLower()));
+
+                if (foundCastMember != null)
+                {
+                    // Fetch the complete filmography of the found actor
+                    var actorCredits = await MovieService.GetActorMovieCreditsById(foundCastMember.Id);
+                    if (actor == null)
+                    {
+                        actor = new Actor(foundCastMember.Name);
+                    }
+
+                    foreach (var role in actorCredits.Cast)
+                    {
+                        actor.MovieCharacters.Add(new MovieCharacter
+                            {
+                                MovieTitle = role.Title, // Directly use Title from MovieRole
+                                CharacterName = role.Character,
+                                MoviePosterPath = role.PosterPath != null ? $"https://image.tmdb.org/t/p/w500{role.PosterPath}" : null,
+                            });
+                    }
+                    break;
+                }
+            }
+
+            StateHasChanged(); // Refresh the UI to reflect the new data
+        }
+    }
+}
+
+
+
+
+
+

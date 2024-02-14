@@ -1,0 +1,8 @@
+C:\Users\hocke\source\repos\MovieActorLookup\MovieActorLookup\obj\Release\net8.0\PubTmp\Out\MovieActorLookup.exe
+C:\Users\hocke\source\repos\MovieActorLookup\MovieActorLookup\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\hocke\source\repos\MovieActorLookup\MovieActorLookup\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\hocke\source\repos\MovieActorLookup\MovieActorLookup\obj\Release\net8.0\PubTmp\Out\MovieActorLookup.dll
+C:\Users\hocke\source\repos\MovieActorLookup\MovieActorLookup\obj\Release\net8.0\PubTmp\Out\MovieActorLookup.deps.json
+C:\Users\hocke\source\repos\MovieActorLookup\MovieActorLookup\obj\Release\net8.0\PubTmp\Out\MovieActorLookup.runtimeconfig.json
+C:\Users\hocke\source\repos\MovieActorLookup\MovieActorLookup\obj\Release\net8.0\PubTmp\Out\MovieActorLookup.pdb
+C:\Users\hocke\source\repos\MovieActorLookup\MovieActorLookup\obj\Release\net8.0\PubTmp\Out\RestSharp.dll
