@@ -1,6 +1,5 @@
 ﻿@page "/searchmovies"
 @using MovieActorLookup.Models
-@rendermode InteractiveServer
 @inject MovieService MovieService
 
 <h3>Search Movies and Characters</h3>
@@ -11,25 +10,28 @@
     <button class="btn btn-primary mt-2" @onclick="SearchForActorAndCharacters">Search</button>
 </div>
 
-@if (actor != null)
+@if (isSearching)
+{
+    <p>Searching...</p>
+}
+else if (actor != null)
 {
     <h4>Actor: @actor.Name</h4>
-        <div class="cards-container" style="display: flex; flex-wrap: wrap;">
+    <div class="d-flex flex-wrap">
         @foreach (var movieCharacter in actor.MovieCharacters)
         {
-            <div class="card mb-4 shadow-sm movie-card" style="width: 18rem; margin: 10px;">
+            <div class="card m-2" style="width: 18rem;">
                 <img class="card-img-top" src="@($"https://image.tmdb.org/t/p/w500{movieCharacter.MoviePosterPath}")" alt="Movie Poster">
                 <div class="card-body">
-                    <h5 class="movie-card-text">@movieCharacter.CharacterName</h5>
-                    <p class="movie-card-body">
-                        <span>@movieCharacter.MovieTitle</span>
-                        <span class="text-muted"> - @movieCharacter.Overview</span>
-                    </p>
-                    <p class="text-muted" style="text-align:center;">Release Date: <span>@movieCharacter.ReleaseDate</span></p>
+                    <h5 class="card-title">@movieCharacter.MovieTitle</h5>
+                    <p class="card-text">@movieCharacter.CharacterName</p>
+                    <small class="text-muted">@movieCharacter.Overview</small>
+                    <br />
+                    <small class="text-muted">Release Date: @movieCharacter.ReleaseDate</small>
                 </div>
             </div>
         }
-        </div>
+    </div>
 }
 else
 {
@@ -40,48 +42,60 @@ else
     private string movieTitle;
     private string characterName;
     private Actor actor;
+    private bool isSearching = false;
 
     private async Task SearchForActorAndCharacters()
     {
+        isSearching = true;
+        actor = null;
+        StateHasChanged(); // Update UI to show searching status
+
         if (!string.IsNullOrWhiteSpace(movieTitle) && !string.IsNullOrWhiteSpace(characterName))
         {
-            actor = null;
             var movies = await MovieService.GetMoviesByTitle(movieTitle);
-
             foreach (var movie in movies)
             {
                 var credits = await MovieService.GetMovieCreditsByMovieId(movie.Id);
-                var foundCastMember = credits.Cast.FirstOrDefault(c => c.Character.ToLower().Contains(characterName.ToLower()));
-
-                if (foundCastMember != null)
+                foreach (var castMember in credits.Cast)
                 {
-                    // Fetch the complete filmography of the found actor
-                    var actorCredits = await MovieService.GetActorMovieCreditsById(foundCastMember.Id);
-                    if (actor == null)
+                    if (castMember.Character.ToLower().Contains(characterName.ToLower()))
                     {
-                        actor = new Actor(foundCastMember.Name);
-                    }
+                        if (actor == null)
+                        {
+                            actor = new Actor(castMember.Name);
+                        }
 
-                    foreach (var role in actorCredits.Cast)
-                    {
                         actor.MovieCharacters.Add(new MovieCharacter
                             {
-                                MovieTitle = role.Title, // Directly use Title from MovieRole
-                                CharacterName = role.Character,
-                                MoviePosterPath = role.PosterPath != null ? $"https://image.tmdb.org/t/p/w500{role.PosterPath}" : null,
+                                MovieTitle = movie.Title,
+                                CharacterName = castMember.Character,
+                                MoviePosterPath = movie.PosterPath,
+                                ReleaseDate = movie.ReleaseDate,
+                                Overview = movie.Overview
                             });
                     }
-                    break;
                 }
             }
-
-            StateHasChanged(); // Refresh the UI to reflect the new data
         }
+
+        isSearching = false;
+        StateHasChanged(); // Update UI with search results
+    }
+
+    private async Task<Movie> GetProperMovieBasedOffOfActorInvolvement(string movieActorTitle, CastMember actor)
+    {
+        List<Credits> overallCredits = new();
+
+        List<Movie> actorMovies = await MovieService.GetMoviesByTitle(movieActorTitle);
+
+        foreach (Movie movie in actorMovies)
+        {
+            overallCredits.Add(await MovieService.GetMovieCreditsByMovieId(movie.Id));
+        }
+
+        Credits actorMovieCredits = overallCredits.FirstOrDefault(x => x.Cast.Any(c => c.Id == actor.Id));        
+        Movie movie1 = actorMovies.Where(x => x.Id == actorMovieCredits.Id).FirstOrDefault();
+
+        return movie1;
     }
 }
-
-
-
-
-
-

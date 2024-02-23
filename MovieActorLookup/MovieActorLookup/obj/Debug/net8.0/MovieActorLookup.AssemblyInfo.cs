@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieActorLookup")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e40502fdbd018b0e1ed118a860e887917a2cd59b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieActorLookup")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieActorLookup")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

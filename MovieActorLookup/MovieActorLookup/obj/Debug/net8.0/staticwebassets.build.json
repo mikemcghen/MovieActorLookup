@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZM+av6zLVDau6rPYop+p6yCOtTUiB+YQF8r8p4Q0cpg=",
+  "Hash": "edYXZwr3nH0uMn5PONis+dpMWfNBwxeONYmBQqq+Kug=",
   "Source": "MovieActorLookup",
   "BasePath": "_content/MovieActorLookup",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MovieActorLookup\\wwwroot",
       "Source": "MovieActorLookup",
-      "ContentRoot": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\wwwroot\\",
       "BasePath": "_content/MovieActorLookup",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MovieActorLookup.styles.css",
+      "Identity": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MovieActorLookup.styles.css",
       "SourceId": "MovieActorLookup",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/MovieActorLookup",
       "RelativePath": "MovieActorLookup.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MovieActorLookup.styles.css"
+      "OriginalItemSpec": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MovieActorLookup.styles.css"
     },
     {
-      "Identity": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MovieActorLookup.bundle.scp.css",
+      "Identity": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MovieActorLookup.bundle.scp.css",
       "SourceId": "MovieActorLookup",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/MovieActorLookup",
       "RelativePath": "MovieActorLookup.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MovieActorLookup.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MovieActorLookup.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\wwwroot\\app.css",
       "SourceId": "MovieActorLookup",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\wwwroot\\",
       "BasePath": "_content/MovieActorLookup",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "MovieActorLookup",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\wwwroot\\",
       "BasePath": "_content/MovieActorLookup",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "MovieActorLookup",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\wwwroot\\",
       "BasePath": "_content/MovieActorLookup",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\wwwroot\\favicon.png",
       "SourceId": "MovieActorLookup",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\wwwroot\\",
       "BasePath": "_content/MovieActorLookup",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

@@ -10,7 +10,6 @@ namespace MovieActorLookup.Models
         [JsonPropertyName("cast")]
         public List<MovieCharacter> MovieCharacters { get; set; } = new List<MovieCharacter>();
 
-        // Constructor to easily create an actor with a name
         public Actor(string name)
         {
             Name = name;

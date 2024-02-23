@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N6yzX1CL/nSKxEfg85Et3qbjMoV9V+naG/cSaUlgYG9bqXhMJ42ssmtA+LzrrgXjAT4JPDsz9k/54MnSBNfJRQ==",
+  "dgSpecHash": "teSCaIoxQbhIAWD7wgR/GsrjNluCHmzUGtjdxrE3XUSEOhFQuIlIFiZQU4YT22VDEse2Br95f3uhz+BfVDP4mw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hocke\\source\\repos\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup.csproj",
+  "projectFilePath": "C:\\Users\\hocke\\Documents\\GitHub\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup\\MovieActorLookup.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hocke\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
     "C:\\Users\\hocke\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
